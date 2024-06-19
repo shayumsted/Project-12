@@ -1,1 +1,1 @@
-# Project-12
+This HTML and D3 file will be used to create a dynamic data visual dashboard that users can access to view stock values from the given CSV file. Our dashboard will include interactive specs allowing for a better insight of a company's stock performance over a specific period. The visualization will also be tailrored to criteria selected by the user. 
