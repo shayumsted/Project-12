@@ -21,8 +21,7 @@ d3.csv('mock_stock_data.csv').then(data => {
     // Add event listeners for controls
     stockSelector.on('change', () => filterAndRender(data));
     d3.select('#startDate').on('change', () => filterAndRender(data));
-    d3.select('#endDate').on('change', () => filterAndRender(data));
-});
+    d3.select('#endDate').on('change', () => filterAndRender(data));});
 
 function filterAndRender(data) {
     const selectedStock = d3.select('#stockSelector').property('value');
@@ -32,11 +31,9 @@ function filterAndRender(data) {
     const filteredData = data.filter(d => {
         return (!selectedStock || d.stock === selectedStock) &&
                (!isNaN(startDate) || d.date >= startDate) &&
-               (!isNaN(endDate) || d.date <= endDate);
-    });
+               (!isNaN(endDate) || d.date <= endDate);});
 
-    renderChart(filteredData);
-}
+    renderChart(filteredData);}
 
 function renderChart(data) {
     d3.select('#chart').html(''); // Clear previous chart
@@ -95,9 +92,7 @@ function renderChart(data) {
             tooltip.transition().duration(200).style('opacity', .9);
             tooltip.html(`Stock: ${d.stock}<br/>Value: ${d.value}<br/>Date: ${d.date.toLocaleDateString()}`)
                 .style('left', `${d3.event.pageX + 5}px`)
-                .style('top', `${d3.event.pageY - 28}px`);
-        })
+                .style('top', `${d3.event.pageY - 28}px`);})
         .on('mouseout', () => {
-            tooltip.transition().duration(500).style('opacity', 0);
-        });
+            tooltip.transition().duration(500).style('opacity', 0);});
 }
